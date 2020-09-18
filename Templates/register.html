@@ -1,0 +1,12 @@
+{% extends "layout.html" %} {% block title %} create an account {% endblock %} {% block main %}
+<div class="span3 well">
+    <legend>Welcome to Bookshelf. Sign up!</legend><br><br>
+    <form accept-charset="UTF-8" action="/register" method="post" id="myform" name="reg_form">
+        <input class="span3 form-control" name="name" placeholder="Full Name" type="text"><br><br>
+        <input class="span3 form-control" name="username" placeholder="Username" type="text"><br><br>
+        <input class="span3 form-control" name="password" placeholder="Password" type="password"><br><br>
+        <input class="span3 form-control" name="re_password" placeholder="Confirm Password" type="password"><br><br>
+        <button class="btn btn-success" type="submit">create an account</button>
+    </form>
+</div>
+{% endblock %}

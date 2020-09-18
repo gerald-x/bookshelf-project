@@ -1,0 +1,104 @@
+{% extends "layout.html" %} {%block title%} Home {%endblock%} {% block main %}
+
+<form id="search-form" method="post" action="/">
+
+    <div class="input-group mb-4">
+
+        <input type="text" class="form-control search-form" placeholder="Search..." id="myinput" name="search">
+
+        <span class="input-group-btn">
+
+            <button type="submit" class="btn btn-success search-btn" data-target="#search-form" disabled name="q" id="button">
+
+            <i class="fa fa-search"></i>
+
+            </button>
+
+        </span>
+
+    </div>
+
+</form>
+
+
+<div class="book">
+
+    {% for book in results %} {% if book|length == 5 %} {% if book[3]|length == 13 %}
+    <img src="http://covers.openlibrary.org/b/isbn/{{book[3]}}-M.jpg" /><br>
+
+    <p><strong>Name:</strong> {{book[1]}}</p>
+
+    <p><strong>Author(s):</strong> Not provided</p>
+
+    <p><strong>Description:</strong> {{book[2]}}</p>
+
+    <p><strong>Pages:</strong> {{book[4]}}</p>
+
+    <a href="https://books.google.com.ng/books?id={{book[0]}}" class="btn btn-success">Link to Google books</a>
+
+    <hr size=2 0 noshade=""> {%else%}
+    <img src="http://covers.openlibrary.org/b/isbn/{{book[4]}}-M.jpg" /><br>
+
+    <p><strong>Name:</strong> {{book[1]}}</p>
+
+    <p><strong>Author(s):</strong> {{book[2]}}</p>
+
+    <p><strong>Description:</strong> {{book[3]}}</p>
+
+
+    <p><strong>Pages:</strong> not provided</p>
+
+    <a href="https://books.google.com.ng/books?id={{book[0]}}" class="btn btn-success">Link to Google books</a>
+
+    <hr size=2 0 noshade=""> {% endif%} {% elif book|length == 6 %}
+
+    <img src="http://covers.openlibrary.org/b/isbn/{{book[4]}}-M.jpg" /><br>
+
+    <p><strong>Name:</strong> {{book[1]}}</p>
+
+    <p><strong>Author(s):</strong> {{book[2]}}</p>
+
+    <p><strong>Description:</strong> {{book[3]}}</p>
+
+
+    <p><strong>Pages:</strong> {{book[5]}}</p>
+
+    <a href="https://books.google.com.ng/books?id={{book[0]}}" class="btn btn-success">Link to Google books</a>
+
+    <hr size=2 0 noshade=""> {% elif book|length == 4 %}
+    <img src="http://covers.openlibrary.org/b/isbn/{{book[3]}}-M.jpg" /><br>
+
+    <p><strong>Name:</strong> {{book[1]}}</p>
+
+    <p><strong>Author(s):</strong> Not provided</p>
+
+    <p><strong>Description:</strong> {{book[2]}}</p>
+
+    <p><strong>Pages:</strong> not provided</p>
+
+    <a href="https://books.google.com.ng/books?id={{book[0]}}" class="btn btn-success">Link to Google books</a>
+
+    <hr size=2 0 noshade=""> {% endif %} {% endfor %}
+
+
+
+
+</div>
+
+<script>
+    document.getElementById('myinput').onkeyup = function() {
+
+        if (document.getElementById('myinput').value === '') {
+
+            document.getElementById('button').disabled = true;
+            console.log('ok')
+
+        } else {
+
+            document.getElementById('button').disabled = false;
+            console.log('ok')
+        }
+
+    }
+</script>
+{% endblock %}
