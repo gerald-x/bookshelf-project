@@ -1,0 +1,65 @@
+body {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    margin-top: 35px;
+}
+
+
+/*SEARCH FORM*/
+
+main .search-form {
+    border-radius: 15px 0px 0px 15px;
+    /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
+    display: inline-block;
+    width: auto !important;
+}
+
+main .form-control {
+    /* center form controls */
+    display: inline-block;
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main .search-btn {
+    border-radius: 0px 30px 30px 0px;
+    cursor: pointer;
+}
+
+main .book {
+    width: auto;
+    overflow-x: hidden;
+}
+
+nav .navbar-header .header {
+    margin-left: 12px;
+    color: green;
+    font-size: 25px;
+}
+
+main hr {
+    height: 2px;
+    background-color: grey;
+    color: grey;
+}
+
+footer {
+    color: grey;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+footer a {
+    color: grey;
+}
